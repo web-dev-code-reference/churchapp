@@ -10,20 +10,35 @@ class _ChurchPostState extends State<ChurchPost> {
   @override
   Widget build(BuildContext context) {
     return new ListView.builder(
-      itemCount:churchPostModel.length,
-      itemBuilder: (context,i)=>new Column(
-        children: <Widget>[
-          new Divider(height: 10.0,),
-          new ListTile(
-            leading: new CircleAvatar(
-              foregroundColor: Theme.of(context).primaryColor,
-              backgroundColor: Colors.grey,
-              backgroundImage: new NetworkImage(churchPostModel[i].avatarUrl),
-            ),
-            title: new Text(churchPostModel[i].title),
-          )
-        ],
-      ),
+      itemCount: churchPostModel.length,
+      itemBuilder: (context, i) => new Column(
+            children: <Widget>[
+              new Divider(
+                height: 10.0,
+              ),
+              new ListTile(
+                leading: new CircleAvatar(
+                  foregroundColor: Theme.of(context).primaryColor,
+                  backgroundColor: Colors.grey,
+                  backgroundImage:
+                      new NetworkImage(churchPostModel[i].avatarUrl),
+                ),
+                title: new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    new Text(
+                      churchPostModel[i].title,
+                      style: new TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    new Text(
+                      churchPostModel[i].message,
+                      style: new TextStyle(fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
     );
   }
 }

@@ -6,7 +6,13 @@ class ChatModel {
   final String chattime;
   final String avatarUrl;
 
-  ChatModel({this.title, this.content, this.name, this.message, this.chattime, this.avatarUrl});
+  ChatModel(
+      {this.title,
+      this.content,
+      this.name,
+      this.message,
+      this.chattime,
+      this.avatarUrl});
 }
 
 List<ChatModel> churchPostModel = [
